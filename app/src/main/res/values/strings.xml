@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">PsyTests</string>
+    <string name="color_activity_notation">
+        Окно через некоторые промежутки времени будет загораться красным цветом.
+        <br />
+        Как только оно загорится, нажимаете на экран.
+    </string>
+    <string name="volume_activity_notation">
+        Через произвольные промежутки времени будет включаться звуковой сигнал.
+        <br />
+        Как только он включается, нажимаете клавишу.
+    </string>
+    <string name="color_area_activity_notation">
+        Через произвольные промежутки времени в произвольном будет загораться квадрат.
+        <br />
+        Как только он загорится, нажимаете клавишу.
+    </string>
+    <string name="color_area_recognition_activity_notation">
+        Через произвольные промежутки времени в произвольном будет загораться красный или зеленый квадрат.
+        <br />
+        Как только он включается, нажимаете клавишу "1", если квадрат красный и "2", если зеленый.
+    </string>
+    <string name="even_odd_notation">
+        В окне будет появляться число.
+        <br />
+        В ответ на четные числа быстро нажимаете клавишу "2", на нечетные - клавишу "1"
+    </string>
+    <string name="herz_activity">
+        В окне будет нарисован красный прямоугольник,
+        <br />
+        половинки которого будут мигать с возрастающей частотой. Как только перестанете различать мигание половинок , нажимаете клавишу.
+    </string>
+    <string name="dialog_title">
+        Dialog
+    </string>
+    <string name="dialog_message">
+        Приготовтесь и нажмите OK
+    </string>
+    <string name="empty">
+        ✕
+    </string>
+    <string name="focust_test_notation_up">
+        Отмечать: ↑
+    </string>
+    <string name="focust_test_notation_down">
+        Отмечать: ↓
+    </string>
+    <string name="focust_test_notation_right">
+        Отмечать: →
+    </string>
+    <string-array name="symbols">
+        <item>↑</item>
+        <item>↓</item>
+        <item>←</item>
+        <item>→</item>
+    </string-array>
+    <string name="focust_test_notation_left">
+        Отмечать: ←
+    </string>
+    <string name="FIO">
+        ФИО
+    </string>
+    <string name="OK">OK</string>
+</resources>
