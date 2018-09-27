@@ -6,7 +6,7 @@ import java.util.*
 open class ActivityWithTimer:RandomSleeping() {
     var lastTime:Long=0
     var middleTime:Long=0
-    var countOfTests=5
+    open val countOfTests=5
 
     override fun afterWarningAct() {
         super.afterWarningAct()

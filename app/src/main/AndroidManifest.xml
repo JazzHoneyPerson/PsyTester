@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tester.psytester">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +23,12 @@
         <activity android:name=".TestingActivity" />
         <activity android:name=".VolumeTestActivity" />
         <activity android:name=".ColorAreaTestActivity" />
-        <activity android:name=".EvenOddTestActivity"></activity>
+        <activity android:name=".EvenOddTestActivity" />
+        <activity android:name=".ColorRecognitionTestActivity" />
+        <activity android:name=".FocusTestActivity" />
+        <activity android:name=".NewColorTestActivity" />
+        <activity android:name=".HalfRectTestActivity" />
+        <activity android:name=".TestClickActvity"></activity>
     </application>
 
 </manifest>

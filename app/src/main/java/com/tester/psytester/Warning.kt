@@ -5,11 +5,14 @@ import org.jetbrains.anko.alert
 import org.jetbrains.anko.okButton
 
 open class Warning:Portrait() {
-    open fun afterWarningAct(){}
+    var isCreate=false
+    var warningStringId=R.string.dialog_message
+    open fun afterWarningAct(){isCreate=true}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        alert(R.string.dialog_message,R.string.dialog_title){
+        alert(warningStringId,R.string.dialog_title){
             okButton { afterWarningAct() }
+            
         }.show()
     }
 

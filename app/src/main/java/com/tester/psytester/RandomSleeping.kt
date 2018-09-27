@@ -3,8 +3,8 @@ package com.tester.psytester
 import android.os.Handler
 
 open class RandomSleeping:Warning(){
-    val maxTimeToSleep=1
-    val minTimeToSleep=1
+    open val maxTimeToSleep=2
+    open val minTimeToSleep=4
 
     var sleep=true
     open fun afterSleepAct() {

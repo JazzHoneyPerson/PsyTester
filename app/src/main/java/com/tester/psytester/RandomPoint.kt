@@ -2,19 +2,21 @@ package com.tester.psytester
 
 import android.graphics.*
 import android.graphics.drawable.Drawable
+
 import android.support.v4.content.res.ResourcesCompat.getColor
 
-class RedPoint(x:Int,y:Int):Drawable() {
+class RandomPoint(width:Int,height:Int,color:Int):Drawable() {
     private val  mPaint=Paint(Paint.ANTI_ALIAS_FLAG)
     private val mPath = Path()
+    var imageWidth=0
+    var imageHeight=0
 
-    private var x=0f
-    private var y=0f
+
 
     init{
-        this.x=x*bounds.width()/100f
-        this.y=y*bounds.height()/100f
-        mPaint.color=Color.RED
+        imageWidth=width
+        imageHeight=height
+        mPaint.color=color
     }
     override fun draw(canvas: Canvas) {
         canvas.drawPath(mPath, mPaint)
@@ -32,8 +34,10 @@ class RedPoint(x:Int,y:Int):Drawable() {
     }
     override  fun onBoundsChange(bounds: Rect) {
         super.onBoundsChange(bounds)
-
         val width = bounds.width()/10f
+        val x=Randomizer().randInt(0,bounds.width()-width.toInt()).toFloat()
+        val y=Randomizer().randInt(0,bounds.height()-width.toInt()).toFloat()
+
         mPath.reset()
         mPath.moveTo(x,y)
         mPath.lineTo(x+0f, y+0f);

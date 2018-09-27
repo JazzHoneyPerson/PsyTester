@@ -20,8 +20,10 @@ import org.jetbrains.anko.verticalLayout
 
             setBackgroundColor(Color.WHITE)
             onClick {
-                setBackgroundColor(Color.WHITE)
-                click()
+                if(isCreate) {
+                    setBackgroundColor(Color.WHITE)
+                    click()
+                }
             }
         }
 

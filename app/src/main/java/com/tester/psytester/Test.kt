@@ -10,13 +10,19 @@ open class Test:ActivityWithTimer() {
     var data=DataOfTest(0)
     var count=0
 
-    fun showResult():String {
-        val mid=middleTime/1000.0
-        val countOfMistakes=data.countOfMistakes
-        return "Среднее время: $mid\nКоличество ошибок:$countOfMistakes"
+
+    open fun showResult():String {
+        val mid=middleTime/1000.0-0.25
+        val countOfMistakes=data.countOfMistakes*100/(countOfTests)
+        Worker.controles.add(Control(this.toString(),mid.toString(),countOfMistakes.toString()))
+        return "Среднее время: $mid\nПроцент ошибок:$countOfMistakes%"
     }
 
+    override fun onBackPressed() {
+
+    }
     override fun finish() {
+        isCreate=false
         alert(showResult()){okButton {super.finish()}}.show()
     }
 
