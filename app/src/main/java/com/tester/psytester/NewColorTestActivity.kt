@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
+import java.math.BigDecimal
 
 class NewColorTestActivity : AppCompatActivity() {
 
@@ -17,6 +18,9 @@ class NewColorTestActivity : AppCompatActivity() {
     var tester=Tester()
     var lay: LinearLayout? =null
     var currentColor=Color.WHITE
+
+    fun Double.round() = BigDecimal(this).setScale(2, BigDecimal.ROUND_HALF_UP).toDouble()
+
     override fun onBackPressed() {
 
     }
@@ -25,10 +29,10 @@ class NewColorTestActivity : AppCompatActivity() {
     }
     fun randTime()=(Randomizer().randInt(minTime,maxTime)*1000).toLong()
     fun writeResult():String{
-        var middleTimeString="Средннее время:"+((tester.time/(countOfTest+1)*1000).toInt()/1000.0-0.25)
+        var middleTimeString="Средннее время:"+((tester.time/(countOfTest+1)*1000).toInt()/1000.0-0.20).round()
         var percentOfMistakes="Количество ошибок:"+tester.mistakes
         Worker.controles.add(Control(this.toString(),
-                ((tester.time/(countOfTest+1)*1000).toInt()/1000.0-0.25).toString(),
+                ((tester.time/(countOfTest+1)*1000).toInt()/1000.0-0.20).round().toString(),
                 tester.mistakes.toString()))
         return middleTimeString+"\n"+percentOfMistakes
     }
@@ -36,6 +40,7 @@ class NewColorTestActivity : AppCompatActivity() {
         alert(writeResult()){
             okButton {
                 super.finish()
+                isCancelable=false
             }
         }.show()
     }

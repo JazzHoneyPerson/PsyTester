@@ -40,9 +40,7 @@ public class ApachePOIExcelWrite {
             sheet = workbook.createSheet();
         }
 
-//
-//
-//
+
         int rowNum = 0;
 
         Iterator<Row> iterator = sheet.iterator();
@@ -56,7 +54,7 @@ public class ApachePOIExcelWrite {
                 break;
             rowNum++;
         }
-//
+
         for (Control datatype : Worker.Companion.getControles()) {
             Row row = sheet.createRow(rowNum++);
             int colNum = 1;
@@ -66,17 +64,12 @@ public class ApachePOIExcelWrite {
                 cell.setCellValue(field);
             }
         }
-//        Row row = sheet.createRow(0);
-//        Cell cell = row.createCell(0);
-//        cell.setCellValue( "aaa");
+
 
     FileOutputStream outputStream = new FileOutputStream(FILE_NAME);
     workbook.write(outputStream);
     workbook.close();
 
 
-//     File file1 = new File( Environment.getExternalStorageDirectory(), "Aa.xlsx");
-//        }
-//
-//    }
+
 }}

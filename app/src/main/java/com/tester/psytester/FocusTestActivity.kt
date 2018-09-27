@@ -1,14 +1,18 @@
 package com.tester.psytester
 
 import android.app.Activity
+import android.content.DialogInterface
 import android.content.pm.ActivityInfo
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
 import android.widget.GridView
 import kotlinx.android.synthetic.main.grid_item.view.*
+import kotlinx.coroutines.experimental.suspendCancellableCoroutine
 import org.jetbrains.anko.*
+import org.jetbrains.anko.appcompat.v7.Appcompat
 import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.support.v4.fragmentTabHost
 
 class FocusTestActivity : Activity() {
     val countOfSymbols=100
@@ -103,12 +107,18 @@ class FocusTestActivity : Activity() {
                 }
                 height= dip(200)
             }
-            android.os.Handler().postDelayed({ getContentGridView()} ,(1000).toLong())
+
         }
         alert(changeWarningString(index)){
             okButton {
-                tester.startTimer()
+                android.os.Handler().postDelayed({
+                    getContentGridView()
+                    tester.startTimer()
+                } ,(1000).toLong())
+
             }
+            isCancelable=false
+
         }.show()
 
 

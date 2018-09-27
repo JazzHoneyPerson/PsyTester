@@ -12,7 +12,7 @@ open class Warning:Portrait() {
         super.onCreate(savedInstanceState)
         alert(warningStringId,R.string.dialog_title){
             okButton { afterWarningAct() }
-            
+            isCancelable=false
         }.show()
     }
 
