@@ -18,7 +18,6 @@ open class RandomSleeping:Warning(){
 
     fun sleepRandom(){
         val randValue=Randomizer().randInt(minTimeToSleep,maxTimeToSleep)
-
         sleep(randValue)
     }
 

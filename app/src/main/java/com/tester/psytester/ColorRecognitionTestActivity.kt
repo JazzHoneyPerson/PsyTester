@@ -14,7 +14,7 @@ import android.widget.ImageView
 class ColorRecognitionTestActivity : Test() {
 
     override fun toString(): String {
-        return "Распознование цвета"
+        return "Распознавание цвета"
     }
     var imageView:ImageView?=null
     var currentColor=0
@@ -24,6 +24,12 @@ class ColorRecognitionTestActivity : Test() {
 
     fun randColor()= if(Randomizer().randInt(0,1)==0) Color.RED else Color.GREEN
 
+    override fun showResult():String {
+        val mid=(middleTime/1000.0-0.2).round()
+        val countOfMistakes=data.countOfMistakes*100/(countOfTests+1)
+        Worker.controles.add(Control(this.toString(),mid.toString(),countOfMistakes.toString()))
+        return "Среднее время: $mid\nПроцент ошибок:$countOfMistakes%"
+    }
     @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
     override fun afterSleepAct() {
         super.afterSleepAct()

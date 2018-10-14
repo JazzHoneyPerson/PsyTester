@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Gravity
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
+import java.math.BigDecimal
 
 class VolumeTestActivity : Test() {
 
@@ -23,8 +24,9 @@ class VolumeTestActivity : Test() {
     }
 
     override fun showResult():String {
-        val mid=middleTime/1000.0
+        val mid=(middleTime/1000.0-0.20).round()
         val countOfMistakes=data.countOfMistakes
+        Worker.controles.add(Control(this.toString(),mid.toString(),countOfMistakes.toString()))
         return "Среднее время: $mid\nКоличество ошибок:$countOfMistakes"
     }
 

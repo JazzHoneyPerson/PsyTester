@@ -12,9 +12,9 @@ open class Test:ActivityWithTimer() {
     var count=0
 
 
-
+    fun Double.round() = BigDecimal(this).setScale(2, BigDecimal.ROUND_HALF_UP).toDouble()
     open fun showResult():String {
-        val mid=(middleTime/1000.0-0.20)
+        val mid=(middleTime/1000.0-0.2).round()
         val countOfMistakes=data.countOfMistakes*100/(countOfTests)
         Worker.controles.add(Control(this.toString(),mid.toString(),countOfMistakes.toString()))
         return "Среднее время: $mid\nПроцент ошибок:$countOfMistakes%"
